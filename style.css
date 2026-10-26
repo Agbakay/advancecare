@@ -483,6 +483,12 @@ button {
   background: var(--color-heading);
   border-radius: 10px;
   color: var(--color-white);
+  cursor: pointer;
+  transition: all 0.5s linear;
+}
+
+button:hover {
+  background: var(--color-cyan);
 }
 
 .links {
@@ -899,5 +905,62 @@ h2 {
 
   .f-social {
     gap: 20px;
+  }
+}
+
+/*  */
+
+.contact {
+  padding: 100px 0;
+  background: #008a9a;
+}
+
+.cont-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.cont-r {
+  width: 80%;
+}
+
+.cont-l {
+  color: var(--color-white);
+}
+
+.form-box {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  width: 70%;
+  margin: 0 auto;
+}
+
+textarea {
+  height: auto;
+  padding-left: 20px;
+  border-radius: 10px;
+  padding-top: 20px;
+}
+
+select {
+  height: 50px;
+  border-radius: 10px;
+  padding: 0 10px;
+}
+
+@media (max-width: 900px) {
+  .cont-r {
+    width: 100%;
+  }
+
+  .cont-row {
+    flex-direction: column;
+  }
+
+  .form-box {
+    width: 100%;
   }
 }
