@@ -24,9 +24,11 @@
 
   <div class="nav mbl">
     <nav>
-      <div class="logo">Advance care</div>
+      <div class="logo">
+        <a href="/"><img src="/assets/logo.png" width="100" alt="" /></a>
+      </div>
 
-      <div class="nav-link" id="menu-tray">
+      <div class="nav-link" id="menu-tray" hidden>
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="#">About</a></li>
@@ -39,11 +41,18 @@
         </div>
       </div>
 
-      <div class="menu" onclick="openMenu()">
+      <button
+        class="menu"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-controls="menu-tray"
+        aria-expanded="false"
+        onclick="openMenu()"
+      >
         <div class="bars"></div>
         <div class="bars"></div>
         <div class="bars"></div>
-      </div>
+      </button>
     </nav>
   </div>
 </div>
@@ -86,14 +95,19 @@
 
   .nav-btn a {
     padding: 12px 30px;
-    background: #000;
+    background: var(--color-heading);
     position: relative;
+    border-radius: 50px;
     color: #fff;
     overflow: hidden;
   }
 
   .nav-btn a:hover {
     color: #fff;
+  }
+
+  .nav-link[hidden] {
+    display: none !important;
   }
 
   .mbl {
@@ -120,30 +134,43 @@
     }
 
     .nav-link {
-      position: fixed;
-      height: 100dvh;
+      position: absolute;
+      height: auto;
       width: 100%;
-      top: 10%;
+      top: calc(100% + 12px);
       background: #f3f3f3;
       left: 0;
       z-index: 99999;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 24px;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 12px 32px rgba(0, 61, 118, 0.16);
+    }
 
-      ul {
-        flex-direction: column;
-        padding-top: 100px;
-        width: 80%;
-        margin: 0 auto;
-      }
+    .nav-link ul {
+      flex-direction: column;
+      align-items: stretch;
+      padding-top: 0;
+      width: 100%;
+      margin: 0 auto;
+      gap: 8px;
+    }
+
+    .nav-link ul li a {
+      display: block;
+      padding: 12px 8px;
     }
 
     .nav-btn {
       text-align: center;
-      margin-top: 40px;
+      margin-top: 0;
     }
   }
 
   .bars {
-    width: 50px;
+    width: 28px;
     height: 4px;
     background: #000;
     display: block;
@@ -154,9 +181,26 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    padding: 5px;
+    padding: 8px;
+    width: auto;
+    height: auto;
+    margin: 0;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
   }
-  .mbl nav .nav-link {
-    display: none;
+
+  .mbl nav .nav-link:not([hidden]) {
+    display: flex;
+  }
+
+  @media (max-width: 480px) {
+    .header {
+      padding: 18px 0;
+    }
+
+    nav {
+      width: calc(100% - 32px);
+    }
   }
 </style>

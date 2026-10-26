@@ -10,10 +10,14 @@ loadComponents();
 //
 
 function openMenu() {
-  var x = document.getElementById("menu-tray");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
+  const menu = document.getElementById("menu-tray");
+  const toggle = document.querySelector(".mbl .menu");
+  const isOpening = menu.hidden;
+
+  menu.hidden = !isOpening;
+  toggle.setAttribute("aria-expanded", String(isOpening));
+  toggle.setAttribute(
+    "aria-label",
+    isOpening ? "Close navigation menu" : "Open navigation menu",
+  );
 }
