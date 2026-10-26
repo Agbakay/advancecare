@@ -1,0 +1,155 @@
+<div>
+  <div class="nav dtp">
+    <nav>
+      <div class="logo">Advance Care</div>
+
+      <div class="nav-link">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">What we do</a></li>
+          <li><a href="#">Faq</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="nav-btn">
+          <a href="#">Join Us</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="nav mbl">
+    <nav>
+      <div class="logo">Advance care</div>
+
+      <div class="nav-link" id="menu-tray">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">What we do</a></li>
+          <li><a href="#">Faq</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="nav-btn">
+          <a href="#">Join Us</a>
+        </div>
+      </div>
+
+      <div class="menu" onclick="openMenu()">
+        <div class="bars"></div>
+        <div class="bars"></div>
+        <div class="bars"></div>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<style>
+  .nav {
+    padding: 10px 0;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    height: 60px;
+    align-items: center;
+    position: relative;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .nav-link ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    list-style: none;
+  }
+
+  a {
+    color: var(--color-text-muted);
+  }
+
+  .nav-btn a {
+    padding: 12px 30px;
+    background: #000;
+    position: relative;
+    color: #fff;
+    overflow: hidden;
+  }
+
+  .nav-btn a:hover {
+    color: #fff;
+  }
+
+  .mbl {
+    display: none;
+  }
+
+  @media (max-width: 1024px) {
+    nav {
+      width: 90%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .dtp {
+      display: none;
+    }
+
+    .mbl nav {
+      display: flex;
+    }
+
+    .mbl {
+      display: flex;
+    }
+
+    .nav-link {
+      position: fixed;
+      height: 100dvh;
+      width: 100%;
+      top: 10%;
+      background: #f3f3f3;
+      left: 0;
+      z-index: 99999;
+
+      ul {
+        flex-direction: column;
+        padding-top: 100px;
+        width: 80%;
+        margin: 0 auto;
+      }
+    }
+
+    .nav-btn {
+      text-align: center;
+      margin-top: 40px;
+    }
+  }
+
+  .bars {
+    width: 50px;
+    height: 4px;
+    background: #000;
+    display: block;
+    border-radius: 20px;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 5px;
+  }
+  .mbl nav .nav-link {
+    display: none;
+  }
+</style>
