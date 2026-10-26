@@ -209,7 +209,7 @@ h1 {
 
 .abt-row {
   display: flex;
-  align-items: start;
+  align-items: center;
   justify-content: space-between;
   gap: 50px;
 }
@@ -225,10 +225,6 @@ h1 {
   width: 50%;
   height: 650px;
   transition: 0.5s ease;
-}
-
-.abt-left:hover {
-  transform: scale(1.02);
 }
 
 h4 {
@@ -611,12 +607,6 @@ h2 {
 
 .abt-section {
   padding: clamp(64px, 10vw, 150px) 0;
-}
-
-.abt-left {
-  height: auto;
-  min-height: 420px;
-  aspect-ratio: 4 / 5;
 }
 
 .abt-right {
