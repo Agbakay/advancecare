@@ -420,7 +420,11 @@ h2 {
 }
 
 .consult-card {
-  width: 80%;
+  width: 90%;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
   padding: 30px 40px;
   background: var(--color-background-green);
@@ -434,9 +438,19 @@ h2 {
   gap: 30px;
 }
 
+@media (max-width: 1024px) {
+  .consult-card {
+    width: 100%;
+  }
+}
+
 @media (max-width: 800px) {
   .c-row {
     flex-direction: column;
+  }
+
+  .consult-card {
+    width: 100%;
   }
 }
 
