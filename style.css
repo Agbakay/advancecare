@@ -657,7 +657,7 @@ h2 {
 }
 
 .f-row {
-  align-items: flex-start;
+  align-items: baseline;
 }
 
 .f-col-1 {
